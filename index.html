@@ -4,6 +4,10 @@
 <head>
     <title>Selector de comunas</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <script>
@@ -14,7 +18,7 @@
         document.getElementById("base").style.display = "none";
 
         if (document.getElementById("region").innerHTML != "") {
-            document.getElementById(document.getElementById("region").innerHTML+"_selector").querySelector("path").style.stroke = "transparent";
+            document.getElementById(document.getElementById("region").innerHTML.replaceAll(" ", "_")+"_selector").querySelector("path").style.stroke = "transparent";
         }
 
         x = document.getElementById(region);
@@ -24,14 +28,14 @@
             }
         }
         x.style.display = "block";
-        document.getElementById("region").innerHTML = region;
+        document.getElementById("region").innerHTML = region.replaceAll("_", " ");
 
-        document.getElementById(region+"_selector").querySelector("path").style.stroke = "cyan";
+        document.getElementById(region+"_selector").querySelector("path").style.stroke = "rgba(68, 231, 210, 0.9)";
         // document.getElementById(region+"_selector").querySelector("path").style.strokeWidth = "5px";
     }
 
     function select_comuna(comuna) {
-        document.getElementById("comuna").innerHTML = comuna;
+        document.getElementById("comuna").innerHTML = comuna.replaceAll("_", " ");
     }
 
     function metropolitana() {
@@ -2264,7 +2268,7 @@
             <h1 class="form_text">Region: <a id="region"></a></h1>
             <h1 class="form_text">Comuna: <a id="comuna"></a></h1>
             <input type="text" id="input_sueldo_padre" placeholder="Sueldo padre">
-            <button onclick="calcular()">Calcular</button>
+            <button onclick="calcular()" class="button">Calcular</button>
             <h1 class="form_text">Resultado: <a id="resultado"></a></h1>
         </div>
     </div>
