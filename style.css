@@ -1,5 +1,6 @@
 body {
     background-color: rgb(255, 255, 255);
+    margin: 0;
 }
 
 
@@ -13,6 +14,8 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
+
+    color: rgb(34, 34, 34);
 }
 
 .form_text {
@@ -30,11 +33,11 @@ body {
     stroke-width: 2px;
 
     transition: fill .2s;
-    fill: #000000;
+    fill: rgb(167, 167, 167);
 }
 
 .map path:hover {
-    fill: rgba(61,203,185,.5);
+    fill: rgb(27, 27, 27);
 }
 
 
@@ -44,6 +47,9 @@ body {
     align-items: center;
     flex-direction: row;
     justify-content: center;
+
+    flex-wrap: wrap;
+    min-height: 80vh;
 }
 
 .comunas {
@@ -55,35 +61,87 @@ body {
     stroke-width:   0.1%;
 
     transition: fill .2s;
-    fill: #000000;
+    fill: rgb(167, 167, 167);
 }
 
 .comunas path:hover{
-    fill: rgba(61,203,185,.5);
+    fill: rgb(27, 27, 27);
 }
 
 .forms {
     padding: 50px;
     width: 30%;
     height: 60%;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(236, 236, 236);
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 3%;
+
+    margin-top: 3%;
 }
 
 #input_sueldo_padre {
-    border-radius: 5px;
+    background-color: transparent;
+    border-style: solid;
+    border-radius:5px;
+    border-width: 1px;
     padding: 5px;
     size: 100px;
-    font-size: large;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
 }
 
 .metropolitana :hover{
-    fill: rgb(111, 233, 107) !important;
+    fill: rgb(105, 105, 105) !important;
 }
 
 .button {
-    font-size: large;
+    transition: 0.2s;
+    background-color: rgb(247, 247, 247);
+    color: rgb(44, 44, 44);
+    margin: 2%;
+    font-size: 30px;
+    border: 0;
+    border-radius: 30px;
+}
+
+.button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.footer {
+    background: #1d1d1d;
+    height: 200px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-style: notmal;
+
+    margin-top: 5%;
+}
+
+.footer_main_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+}
+
+.footer_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+@media screen and (max-width: 800px)
+{
+    .forms {
+        width: 100%;
+    }
 }
